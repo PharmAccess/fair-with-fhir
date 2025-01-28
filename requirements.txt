@@ -1,6 +1,7 @@
 ipykernel
 nxontology >= 0.5
 owlready2 >= 0.47
+polars
 pydantic
 rdflib >=7.1
 ruff
