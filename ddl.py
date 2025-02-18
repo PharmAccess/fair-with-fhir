@@ -1,18 +1,20 @@
 snomed = {
-    "concept":
+    "Concept":
         """
-        CREATE NODE TABLE concept(
+        CREATE NODE TABLE Concept(
             id INT64,
             effectiveTime DATE,
             active BOOLEAN,
             moduleId INT64,
             definitionStatusId INT64,
+            fullQualifiedName STRING,
+            synonyms STRING[],
             PRIMARY KEY (id)
         );
         """,
-    "relationship":
+    "Relationship":
         """
-        CREATE REL TABLE relationship(
+        CREATE REL TABLE Relationship(
             FROM concept to concept,
             id INT64,
             effectiveTime DATE,
