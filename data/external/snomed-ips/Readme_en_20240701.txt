@@ -1,0 +1,33 @@
+The SNOMED CT IPS Terminology package is provided in a SNAPSHOT only format, and is delivered via Internet download.
+
+The SNOMED CT files are designed as relational tables with each line in the file representing a row in the table. The first row of each table contains column headings. All other rows contain data.
+
+© International Health Terminology Standards Development Organisation 2002-2024.  All rights reserved.  SNOMED CT® was originally created by the College of American Pathologists.  "SNOMED" and "SNOMED CT" are registered trademarks of International Health Terminology Standards Development Organisation, trading as SNOMED International.
+
+SNOMED CT has been created by combining SNOMED RT and a computer based nomenclature and classification known as Clinical Terms Version 3, formerly known as Read Codes Version 3, which was created on behalf of the UK Department of Health and is Crown copyright.
+
+This document forms part of the SNOMED CT® IPS Terminology package distributed by SNOMED International, and is subject the terms of the Creative Commons Attribution 4.0 International Public License, https://creativecommons.org/licenses/by/4.0/.
+
+The SNOMED International IPS Terminology release User Guide provides information on downloading the package and considerations for its use.  The full url is:  https://confluence.ihtsdotools.org/display/DOCIPSTUG 
+
+Directory listing:
+
+
+    SnomedCT_IPSTerminologyRelease_PRODUCTION_20241216T120000Z
+        Snapshot
+            Terminology
+                sct2_Concept_IPSSnapshot_IPST_20240701.txt
+                sct2_Description_IPSSnapshot-en_IPST_20240701.txt
+                sct2_Relationship_IPSSnapshot_IPST_20240701.txt
+                sct2_RelationshipConcreteValues_IPSSnapshot_IPST_20240701.txt
+                sct2_sRefset_IPSOWLExpressionSnapshot_IPST_20240701.txt
+                sct2_TextDefinition_IPSSnapshot-en_IPST_20240701.txt
+            Refset
+                Language
+                    der2_cRefset_IPSLanguageSnapshot-en_IPST_20240701.txt
+                Content
+                    der2_Refset_IPSSimpleSnapshot_IPST_20240701.txt
+                Metadata
+                    der2_ssRefset_IPSModuleDependencySnapshot_IPST_20240701.txt
+                    der2_cciRefset_IPSRefsetDescriptorSnapshot_IPST_20240701.txt
+        Readme_en_20240701.txt
