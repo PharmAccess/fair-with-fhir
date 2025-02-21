@@ -6,7 +6,7 @@ sct_rel = namedtuple("SnomedRelationship", ["name", "typeId"])
 @dataclass
 class sct:
     concept: str = """
-        CREATE NODE TABLE Concept(
+        CREATE NODE TABLE SCT(
             id INT64,
             effectiveTime DATE,
             active BOOLEAN,
@@ -22,7 +22,7 @@ class sct:
     def relationship(name: str) -> str:
         return f"""
             CREATE REL TABLE {name}(
-                FROM concept to concept,
+                FROM SCT to SCT,
                 id INT64,
                 effectiveTime DATE,
                 active BOOLEAN,
@@ -48,3 +48,44 @@ class sct:
         sct_rel("HasActiveIngredient", 762949000),
         sct_rel("HasManufacturedDoseForm", 411116001)
     )
+
+@dataclass
+class icd:
+    Chapter: str = """
+        CREATE NODE TABLE ICD10Chapter(
+            number INT64,
+            rubric STRING,
+            PRIMARY KEY (number)
+        );
+        """
+    
+    Group: str = """
+        CREATE NODE TABLE ICD10Group(
+            code STRING,
+            rubric STRING,
+            PRIMARY KEY (code)
+        );
+        """
+    
+    Category3: str = """
+        CREATE NODE TABLE ICD10Category3(
+            code STRING,
+            rubric STRING,
+            PRIMARY KEY (code)
+        );
+        """
+    Category4: str = """
+        CREATE NODE TABLE ICD10Category4(
+            code STRING,
+            rubric STRING,
+            PRIMARY KEY (code)
+        );
+        """
+    
+    IsSubClassOf: str = """
+        CREATE REL TABLE IsSubClassOf(
+            FROM ICD10Group to ICD10Chapter,
+            FROM ICD10Category3 to ICD10Group,
+            FROM ICD10Category4 to ICD10Category3
+        );
+        """
