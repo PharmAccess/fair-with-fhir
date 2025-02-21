@@ -89,3 +89,28 @@ class icd:
             FROM ICD10Category4 to ICD10Category3
         );
         """
+    
+@dataclass
+class who_anc:
+    WhoAncCode: str = """
+        CREATE NODE TABLE WhoAncCode(
+            code STRING,
+            rubric STRING,
+            PRIMARY KEY (code)
+        );
+        """
+
+    EquivalentTo: str = """
+        CREATE REL TABLE EquivalentTo(
+            FROM WhoAncCode TO SCT,
+            FROM WhoAncCode TO ICD10Category3,
+            FROM WhoAncCode TO ICD10Category4
+        );
+        """
+    
+    RelatedTo: str = """
+        CREATE REL TABLE RelatedTo(
+            FROM WhoAncCode TO SCT
+        );
+        """
+
