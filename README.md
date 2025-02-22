@@ -1,4 +1,4 @@
-# fair-with-fhir
+# FAIR with FHIR - A proposed framework to retrospectively improve the FAIRness of FHIR-compliant implementation data
 
 Supplementary code for FAIR with FHIR paper, with the following demonstration notebooks:
 
