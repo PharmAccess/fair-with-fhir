@@ -27,7 +27,7 @@ class sct:
                 effectiveTime DATE,
                 active BOOLEAN,
                 moduleId INT64,
-                relationshipGroup INT64,
+                relationshipGroup INT8,
                 typeId INT64,
                 characteristicTypeId INT64,
                 modifierId INT64,
@@ -53,7 +53,7 @@ class sct:
 class icd:
     Chapter: str = """
         CREATE NODE TABLE ICD10Chapter(
-            number INT64,
+            number INT8,
             rubric STRING,
             PRIMARY KEY (number)
         );
@@ -89,7 +89,45 @@ class icd:
             FROM ICD10Category4 to ICD10Category3
         );
         """
-    
+
+@dataclass
+class loinc:
+    LOINC: str = """
+        CREATE NODE TABLE LOINC(
+            code STRING,
+            component STRING,
+            property STRING,
+            time_aspect STRING,
+            system STRING,
+            scale_type STRING,
+            class STRING,
+            classtype INT8,
+            long_common_name STRING,
+            short_common_name STRING,
+            status STRING,
+            version_first_released STRING,
+            version_last_changed STRING,
+            PRIMARY KEY (code)
+        );
+    """
+
+
+    LOINC_deprecated: str = """
+        CREATE NODE TABLE LOINC_deprecated(
+            code STRING,
+            PRIMARY KEY (code)
+        );
+        """
+
+    LOINC_mapto: str = """
+        CREATE REL TABLE MapTo(
+            FROM LOINC_deprecated TO LOINC,
+            comment STRING
+        );
+        """
+
+
+
 @dataclass
 class who_anc:
     WhoAncCode: str = """
