@@ -17,3 +17,7 @@ docker run -p 8000:8000 \
     --rm kuzudb/explorer:latest
 ```
 
+![Overview of Kùzu Explorer running with the KUMLS datbase.](overview-explorer.png)
+![Example of detailed graph](detailed-graph.png)
+![Schema view](schema.png)
+
