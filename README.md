@@ -3,7 +3,7 @@
 Supplementary code for FAIR with FHIR paper, with the following demonstration notebooks:
 
 - [profiles.ipynb](./profiles.ipynb) demonstrates the FHIR Profiling mechanism in Python, as an enabler for validating FHIR data in bulk
-- [kumls.ipynb](./profiles.ipynb) demonstrates KUMLS, a lightweight UMLS knowledge graph database implemented in [Kùzu](https://kuzudb.com/)
+- [kumls.ipynb](./kumls.ipynb) demonstrates KUMLS, a lightweight UMLS knowledge graph database implemented in [Kùzu](https://kuzudb.com/)
 
 ## Using the KUMLS database
 
